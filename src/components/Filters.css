@@ -1,0 +1,117 @@
+/*FILTERS*/
+.filterContainer {
+  margin: 0 auto;
+  border-radius: 8px;
+  width: 75vw;
+  padding: 2%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  background-color: var(--color-bg-filters);
+}
+.filterContainer h2,
+h5 {
+  color: black;
+  margin-bottom: 12px;
+}
+.filterListContainer {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 10px;
+  width: 70%;
+  justify-content: center;
+  align-items: center;
+  margin-bottom: 2%;
+}
+.filterElement,
+.filterElement input {
+  width: 75px;
+  padding: 5px;
+  border-radius: 5px;
+  font-weight: bold;
+}
+.filterElement input {
+  width: 77px;
+  opacity: 0;
+  z-index: 99999999999;
+  position: absolute;
+  cursor: pointer;
+}
+.grass {
+  background-color: green;
+}
+.electric {
+  background-color: yellow;
+}
+.fire {
+  background-color: red;
+}
+.water {
+  background-color: blue;
+}
+.psychic {
+  background-color: violet;
+}
+.fairy {
+  background-color: pink;
+}
+.dark {
+  background-color: rgba(0, 0, 0, 0.655);
+}
+.ghost {
+  background-color: purple;
+}
+.ground {
+  background-color: brown;
+}
+.rock {
+  background-color: burlywood;
+}
+.flying {
+  background-color: lightblue;
+}
+.dragon {
+  background-color: rgba(255, 217, 0, 0.824);
+}
+.bug {
+  background-color: chartreuse;
+}
+.steel {
+  background-color: grey;
+}
+.normal {
+  background-color: lightgrey;
+}
+.ice {
+  background-color: cadetblue;
+}
+.fighting {
+  background-color: darkgoldenrod;
+}
+.poison {
+  background-color: darkorchid;
+}
+.filterButton {
+  width: 120px;
+}
+.electric,
+.normal,
+.flying,
+.fairy,
+.rock,
+.psychic,
+.bug {
+  color: black;
+}
+.buttonsFiltersContainer {
+  margin-top: 10px;
+  display: flex;
+  gap: 10px;
+}
+.filterElement:hover,
+.filterElement:focus {
+  box-shadow: 0 0.8em 0.8em -0.4em var(--color-bg-button);
+  -webkit-transform: translateY(-0.25em);
+  transform: translateY(-0.25em);
+}

@@ -1,0 +1,107 @@
+#root {
+  margin: 0 auto;
+  text-align: center;
+}
+/* LOADING  COMPONENT*/
+.loadingContainer {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100vw;
+  height: 100vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background-color: var(--color-bg-button);
+}
+.pokedex {
+  width: 55%;
+}
+.pokeball {
+  position: absolute;
+  z-index: 10000;
+  top: 47%;
+  left: 35%;
+  width: 5%;
+  animation: 1s infinite linear girar;
+}
+/* LOGO COMPONENT */
+.logo {
+  padding: 1%;
+  padding-bottom: 0;
+  margin: 0;
+}
+/*POKEMON COMPONENT */
+
+.pokemonContainer {
+  margin-top: 2%;
+  padding: 2%;
+  display: flex;
+  flex-wrap: wrap;
+  gap: 1%;
+  justify-content: center;
+  align-items: center;
+}
+
+.pokemonCard {
+  display: flex;
+  flex-direction: column;
+  width: 190px;
+  height: 280px;
+  background-color: var(--color-bg-button);
+  border-radius: 8px;
+  margin-bottom: 2%;
+  padding: 1%;
+  padding-bottom: 2%;
+}
+.pokemonCard h2 {
+  text-transform: uppercase;
+}
+@media screen and (max-width: 741px) {
+  .logo img {
+    width: 95vw;
+  }
+  .pokemonCard {
+    height: 285px;
+  }
+  .pokedex {
+    width: 80%;
+  }
+  .pokeball {
+    width: 8%;
+    left: 28%;
+  }
+}
+.searchContainer {
+  margin: 0 auto;
+  border-radius: 8px;
+  width: 75vw;
+  padding: 2%;
+}
+.searchContainer h2 {
+  margin-bottom: 14px;
+  color: black;
+}
+
+.searchContainer input {
+  border-radius: 5px;
+  height: 40px;
+  width: 200px;
+  padding: 1%;
+  margin-bottom: 2%;
+  border-color: dodgerblue;
+}
+.logo:hover {
+  filter: drop-shadow(0 0 2em #646cffaa);
+}
+.logo.react:hover {
+  filter: drop-shadow(0 0 2em #61dafbaa);
+}
+@keyframes girar {
+  0% {
+    transform: rotate(0deg);
+  }
+  100% {
+    transform: rotate(360deg);
+  }
+}
