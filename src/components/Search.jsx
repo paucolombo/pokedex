@@ -9,7 +9,7 @@ function Search({ onSearch }) {
     <div className='searchContainer'>
       <h2>Pokemon Name or Number</h2>
       <input type="search" placeholder="Pokemon" id="pokemonSearched"
-        name='pokemonSearched' onKeyUp={(e) => setPokemonChosen(e.target.value)} />
+        name='pokemonSearched' onKeyUp={(e) => setPokemonChosen(e.target.value.toLowerCase())} />
       <button onClick={handleSearchPokemon}>Search</button>
     </div>
   )
