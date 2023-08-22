@@ -65,6 +65,9 @@
   .pokemonCard {
     height: 285px;
   }
+  .searchContainer {
+    padding: 2%;
+  }
   .pokedex {
     width: 80%;
   }
@@ -78,7 +81,6 @@
   margin: 0 auto;
   border-radius: 8px;
   width: 75vw;
-  padding: 2%;
 }
 .searchContainer h2 {
   margin-bottom: 14px;
