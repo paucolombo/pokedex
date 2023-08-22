@@ -58,28 +58,6 @@
 .pokemonCard h2 {
   text-transform: uppercase;
 }
-@media screen and (max-width: 741px) {
-  .logo img {
-    width: 95vw;
-  }
-  .pokemonCard {
-    height: 285px;
-  }
-  .searchContainer {
-    padding: 2%;
-  }
-  .pokedex {
-    width: 80%;
-  }
-  .pokeball {
-    width: 8%;
-    left: 28.5%;
-    top: 48.5%;
-  }
-  .searchContainer {
-    width: 150px;
-  }
-}
 .searchContainer {
   margin: 0 auto;
   border-radius: 8px;
@@ -108,5 +86,28 @@
   }
   100% {
     transform: rotate(360deg);
+  }
+}
+
+@media screen and (max-width: 741px) {
+  .logo img {
+    width: 95vw;
+  }
+  .pokemonCard {
+    height: 285px;
+  }
+  .searchContainer {
+    padding: 2%;
+  }
+  .pokedex {
+    width: 80%;
+  }
+  .pokeball {
+    width: 8%;
+    left: 28.5%;
+    top: 48.5%;
+  }
+  .searchContainer input {
+    width: 160px;
   }
 }
