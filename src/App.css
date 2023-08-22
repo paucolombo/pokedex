@@ -62,6 +62,13 @@
   .logo img {
     width: 95vw;
   }
+  .filterContainer {
+    padding: 2em;
+    width: 70vw;
+  }
+  .advancedSearchShow {
+    width: 250px;
+  }
   .pokemonCard {
     height: 285px;
   }
