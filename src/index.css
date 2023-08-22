@@ -4,7 +4,7 @@
   font-weight: 400;
   color-scheme: light dark;
   color: rgba(255, 255, 255, 0.87);
-  --color-bg-button-hover: #6457a688;
+  --color-bg-button-hover: #233696;
   --color-bg-button: #242424d1;
   --color-text-secondary: #fffffe;
   --color-bg-filters: #dbdbdba1;
@@ -44,6 +44,8 @@ button {
   cursor: pointer;
   margin-left: 1%;
 }
+button:focus,
 button:hover {
-  background-color: #3f5ae1;
+  background-color: var(--color-bg-button-hover);
+  transition: background-color 0.3s ease-in-out;
 }

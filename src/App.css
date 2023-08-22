@@ -2,6 +2,7 @@
   margin: 0 auto;
   text-align: center;
 }
+
 /* LOADING  COMPONENT*/
 .loadingContainer {
   position: absolute;
@@ -81,7 +82,7 @@
 }
 .searchContainer h2 {
   margin-bottom: 14px;
-  color: black;
+  color: azure;
 }
 
 .searchContainer input {
@@ -95,9 +96,7 @@
 .logo:hover {
   filter: drop-shadow(0 0 2em #646cffaa);
 }
-.logo.react:hover {
-  filter: drop-shadow(0 0 2em #61dafbaa);
-}
+
 @keyframes girar {
   0% {
     transform: rotate(0deg);

@@ -5,7 +5,9 @@ import './Filters.css'
 
 function Filters({ onClickFilters }) {
   const [filtersChecked, setFiltersChecked] = useState([]);
+  const [advancedSearch, setAdvancedSearch] = useState(false);
   const filtersInputs = document.querySelectorAll('.inputsFilters');
+
   const handleFilters = () => {
     setFiltersChecked([]);
     for (let input of filtersInputs) {
@@ -38,22 +40,35 @@ function Filters({ onClickFilters }) {
     }
     onClickFilters([]);
   }
+  const toogleFilterContainer = () => {
+    if (advancedSearch === false) {
+      setAdvancedSearch(true);
+    } else {
+      setAdvancedSearch(false)
+    }
+  }
   return (
-    <div className='filterContainer'>
-      <h2>Search by Pokemon Type</h2>
-      <h5>Remember that Pokemons have a maximum of two types</h5>
-      <ul className='filterListContainer'>
-        {pokemonTypes.map(type =>
-          <li className={`filterElement ${type}`} key={type}><label htmlFor={type}>
-            <input type="checkbox" name={type} id={type} value={type} className='inputsFilters' onChange={toogleCheckBox} />
-            {type}</label></li>
-        )}
-      </ul>
-      <div className='buttonsFiltersContainer'>
-        <button className='filterButton' onClick={handleFilters}>Filter</button>
-        <button className='filterButton' onClick={clearFilters}>Clear Filter</button>
+    <>
+      {!advancedSearch && <button className='advancedSearchShow' onClick={toogleFilterContainer}>⬇ Show Advanced Search ⬇</button>}
+      {advancedSearch && <div className='filterContainer'>
+        <h2>Search by Pokemon Type</h2>
+        <h5>Remember that Pokemons have a maximum of two types</h5>
+        <ul className='filterListContainer'>
+          {pokemonTypes.map(type =>
+            <li className={`filterElement ${type}`} key={type}><label htmlFor={type}>
+              <input type="checkbox" name={type} id={type} value={type} className='inputsFilters' onChange={toogleCheckBox} />
+              {type}</label></li>
+          )}
+        </ul>
+        <div className='buttonsFiltersContainer'>
+          <button className='filterButton' onClick={handleFilters}>Filter</button>
+          <button className='filterButton' onClick={clearFilters}>Clear Filter</button>
+        </div>
+        {advancedSearch && <button className='advancedSearchHide' onClick={toogleFilterContainer}> ⬆ Hide Advanced Search ⬆ </button>}
       </div>
-    </div>
+      }
+
+    </>
   )
 }
 

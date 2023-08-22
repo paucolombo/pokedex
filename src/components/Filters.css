@@ -9,6 +9,23 @@
   align-items: center;
   justify-content: center;
   background-color: var(--color-bg-filters);
+  animation: 0.2s ease-in expand;
+}
+.advancedSearchShow,
+.advancedSearchHide {
+  width: 292px;
+}
+.advancedSearchHide {
+  margin-top: 12px;
+  background-color: transparent;
+  border: none;
+  padding: 0;
+  color: black;
+}
+.advancedSearchHide:hover {
+  transition: 0.2s ease-in-out color;
+  background-color: transparent;
+  color: var(--color-bg-button-hover);
 }
 .filterContainer h2,
 h5 {
@@ -114,4 +131,12 @@ h5 {
   box-shadow: 0 0.8em 0.8em -0.4em var(--color-bg-button);
   -webkit-transform: translateY(-0.25em);
   transform: translateY(-0.25em);
+}
+@keyframes expand {
+  0% {
+    opacity: 20%;
+  }
+  100% {
+    opacity: 100%;
+  }
 }
