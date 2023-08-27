@@ -1,10 +1,12 @@
 import Logo from './components/Logo'
-import Card from './components/Card'
 import Search from './components/Search'
 import { useState, useEffect } from 'react'
 import './App.css'
 import Filters from './components/Filters'
 import Loading from './components/Loading'
+import { Routes, Route, Link } from 'react-router-dom'
+import PokemonDetail from './components/PokemonDetail'
+import PokemonContainer from './components/PokemonContainer'
 
 function App() {
   const [pokemonCollection, setPokemonCollection] = useState([]);
@@ -51,19 +53,23 @@ function App() {
     <>
       <Loading isVisible={pokemonCollection.length} />
       <Logo />
-      <Search onSearch={handleSearch} />
-      <Filters onClickFilters={onClickFilters} />
-      <div className='pokemonContainer'>
-        {pokemonSearched.length === 0 && pokemonCollection.filter((pokemon) => {
-          return filterSelected.every(type =>
-            pokemon.types.some(pokemonType => pokemonType.type.name === type))
-        })
-          .map((pokemon) =>
-            <Card key={pokemon.id} pokemon={pokemon} />
-          )
-        }
-        {pokemonSearched.length != 0 && <Card key={pokemonSearched.id} pokemon={pokemonSearched} />}
-      </div>
+      <Routes>
+        <Route
+          path='/'
+          element={
+            <>
+              <Search onSearch={handleSearch} />
+              <Filters onClickFilters={onClickFilters} />
+              <PokemonContainer
+                pokemonCollection={pokemonCollection}
+                pokemonSearched={pokemonSearched}
+                filterSelected={filterSelected}
+              />
+            </>
+          }
+        />
+        <Route path='/:name' element={<PokemonDetail setPokemonSearched={setPokemonSearched} />} />
+      </Routes>
     </>
   )
 }
