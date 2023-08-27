@@ -15,7 +15,7 @@ function App() {
 
   useEffect(() => {
     const fetchData = async () => {
-      const response = await fetch('https://pokeapi.co/api/v2/pokemon/?limit=1001');
+      const response = await fetch('https://pokeapi.co/api/v2/pokemon/?limit=1010');
       const data = await response.json();
       const pokemonPromises = data.results.map(async (item) => {
         const response = await fetch(item.url);
