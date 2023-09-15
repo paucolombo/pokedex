@@ -5,8 +5,10 @@ import './App.css'
 import Filters from './components/Filters'
 import Loading from './components/Loading'
 import { Routes, Route, Link } from 'react-router-dom'
-import PokemonDetail from './components/PokemonDetail'
 import PokemonContainer from './components/PokemonContainer'
+import React, { lazy, Suspense } from 'react';
+
+const PokemonDetail = lazy(() => import('./components/PokemonDetail'))
 
 function App() {
   const [pokemonCollection, setPokemonCollection] = useState([]);
@@ -68,7 +70,11 @@ function App() {
             </>
           }
         />
-        <Route path='/:name' element={<PokemonDetail setPokemonSearched={setPokemonSearched} />} />
+        <Route path='/:name' element={
+          <Suspense fallback={<div><h3>Loading...</h3></div>}>
+            <PokemonDetail setPokemonSearched={setPokemonSearched} />
+          </Suspense>
+        } />
       </Routes>
     </>
   )
