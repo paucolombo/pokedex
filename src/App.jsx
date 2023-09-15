@@ -71,7 +71,7 @@ function App() {
           }
         />
         <Route path='/:name' element={
-          <Suspense fallback={<div><img className="pokeball" src='./pokeball.png' alt='pokeball' /></div>}>
+          <Suspense fallback={<div><h3>Loading...</h3></div>}>
             <PokemonDetail setPokemonSearched={setPokemonSearched} />
           </Suspense>
         } />
