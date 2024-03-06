@@ -3,7 +3,7 @@ import { pokemonTypes } from './Data'
 import { useState } from 'react';
 import './Filters.css'
 
-function Filters({ onClickFilters }) {
+function Filters({ onClickFilters, setPage, setOffset, setLimitPokemons, setPaginationVisible }) {
   const [filtersChecked, setFiltersChecked] = useState([]);
   const [advancedSearch, setAdvancedSearch] = useState(false);
   const filtersInputs = document.querySelectorAll('.inputsFilters');
@@ -12,12 +12,17 @@ function Filters({ onClickFilters }) {
     setFiltersChecked([]);
     for (let input of filtersInputs) {
       if (input.checked) {
+        console.log("input " + input.value);
         filtersChecked.push(input.value);
       }
     }
-    if (filtersChecked.length > 2) {
+    console.log(filtersChecked);
+    if (filtersChecked.length > 2 || filtersChecked.length < 1) {
       alert("There are no Pokemons with more than two types, please select two or one type.");
     } else {
+      setPaginationVisible(false);
+      setOffset(0);
+      setLimitPokemons(1000);
       onClickFilters(filtersChecked);
     }
   };
@@ -38,7 +43,11 @@ function Filters({ onClickFilters }) {
     for (let input of filtersInputs) {
       input.checked = false;
     }
+    setPage(1);
+    setLimitPokemons(40);
     onClickFilters([]);
+    setOffset(0);
+    setPaginationVisible(true);
   }
   const toogleFilterContainer = () => {
     if (advancedSearch === false) {

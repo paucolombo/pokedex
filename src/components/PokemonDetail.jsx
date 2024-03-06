@@ -2,10 +2,10 @@ import React from 'react'
 import { useParams, Link } from 'react-router-dom';
 import { useState, useEffect } from 'react';
 
-const PokemonDetail = ({ setPokemonSearched }) => {
+const PokemonDetail = ({ setPokemonSearched, setPaginationVisible }) => {
   const params = useParams();
   const pokemon = params.name;
-
+  setPaginationVisible(false);
   const [pokemonSelected, setPokemonSelected] = useState({});
   useEffect(() => {
     const fetchData = async () => {
@@ -50,7 +50,7 @@ const PokemonDetail = ({ setPokemonSearched }) => {
         </div>
       }
 
-      <Link to='/'> <button>Back to Pokedex</button>
+      <Link to='/'> <button onClick={() => setPaginationVisible(true)}>Back to Pokedex</button>
       </Link>
     </>)
 }

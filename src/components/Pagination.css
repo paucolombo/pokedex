@@ -1,0 +1,16 @@
+.pagination {
+  display: flex;
+  flex-direction: row;
+  gap: 0.5em;
+  align-items: center;
+  justify-content: center;
+  margin-bottom: 1em;
+}
+.pagination p {
+  font-weight: bold;
+  color: black;
+}
+
+.pagination button {
+  margin: 0;
+}
